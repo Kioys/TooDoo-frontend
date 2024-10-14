@@ -1,13 +1,14 @@
 "use client";
-import Image from "next/image";
-import MiniRetriever from "@components/MiniRetriever";
+import MainPage from "./components/MainPage";
+import UserPage from "./components/UserPage";
+import { ParseHook } from "@lib/parse";
+import Parse from "parse";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="relative flex place-items-center ">
-        
-      </div>
-    </main>
-  );
+  const { isInitialized } = ParseHook();
+  if (isInitialized) {
+    return <>{Parse.User.current() ? <UserPage /> : <MainPage />}</>;
+  } else {
+    return <h1>LOADING</h1>;
+  }
 }

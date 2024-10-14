@@ -1,16 +1,17 @@
-import Parse from 'parse';
+import Parse from "parse";
+import { useEffect, useState } from "react";
 
-let isInitialized = false;
-
-const initializeParse = () => {
-  if (!isInitialized) {
-    Parse.initialize('1');
-    Parse.serverURL = 'http://localhost:1337/parse';
-    console.log("se ha iniciado parse")
-    isInitialized = true;
-  }
+const ParseHook = () => {
+  const [isInitialized, setIsInitialized] = useState(false);
+  useEffect(() => {
+    if (!isInitialized) {
+      Parse.initialize("1");
+      Parse.serverURL = "http://localhost:1337/parse";
+      console.log("se ha iniciado parse");
+      setIsInitialized(true);
+    }
+  }, []);
+  return { isInitialized };
 };
 
-initializeParse();
-
-export default Parse;
+export { ParseHook };

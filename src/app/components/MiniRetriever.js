@@ -1,4 +1,4 @@
-import Parse from "@lib/parse";
+import Parse from "parse";
 import { Table } from "antd";
 import { useEffect, useState } from "react";
 
