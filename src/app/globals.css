@@ -6,4 +6,322 @@
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  
+  /* 🎨 Tema moderno para TooDoo */
+  --primary-color: #6366f1;
+  --primary-hover: #5b57f0;
+  --secondary-color: #f1f5f9;
+  --accent-color: #10b981;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border-color: #e2e8f0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 🌗 Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --secondary-color: #1e293b;
+    --border-color: #334155;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* ✨ Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(99, 102, 241, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+  }
+}
+
+/* 🎨 Utility classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* 📱 Mobile improvements */
+@media (max-width: 768px) {
+  .mobile-padding {
+    padding: 1rem;
+  }
+}
+
+/* 🔄 Loading spinner */
+.loading-spinner {
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #8b5cf6;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 🎨 Modern Modal Styles */
+.modern-modal .ant-modal-content {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.modern-modal .ant-modal-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+}
+
+.modern-modal .ant-modal-header .ant-modal-title {
+  color: white;
+  font-weight: 600;
+}
+
+.modern-modal .ant-modal-close {
+  color: white;
+}
+
+.modern-modal .ant-modal-close:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.modern-modal .ant-modal-body {
+  padding: 0;
+}
+
+/* 🎨 Modern Drawer Styles */
+.modern-drawer .ant-drawer-body {
+  padding: 24px;
+  background: linear-gradient(135deg, #fefefe 0%, #f8fafc 100%);
+}
+
+.modern-drawer .ant-drawer-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-bottom: none;
+}
+
+.modern-drawer .ant-drawer-header .ant-drawer-title {
+  color: white;
+  font-weight: 600;
+}
+
+.modern-drawer .ant-drawer-close {
+  color: white;
+}
+
+/* 🎨 Modern Tabs */
+.modern-tabs .ant-tabs-tab {
+  border-radius: 8px !important;
+  margin: 0 4px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.modern-tabs .ant-tabs-tab-active {
+  background: white !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modern-tabs .ant-tabs-ink-bar {
+  display: none;
+}
+
+.modern-tabs .ant-tabs-card > .ant-tabs-content {
+  height: auto;
+}
+
+.modern-tabs .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {
+  border-radius: 8px;
+  border: none;
+  background: white;
+  margin-right: 8px;
+}
+
+.modern-tabs .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+/* 🎨 Table improvements */
+.ant-table-thead > tr > th {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-bottom: 2px solid #e2e8f0;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background: #fafbfc !important;
+}
+
+.ant-table-tbody > tr.ant-table-row-selected > td {
+  background-color: rgba(139, 92, 246, 0.1) !important;
+}
+
+.ant-table-tbody > tr.ant-table-row-selected:hover > td {
+  background-color: rgba(139, 92, 246, 0.15) !important;
+}
+
+/* 🎨 Form improvements */
+.ant-form-item-label > label {
+  font-weight: 600;
+  color: #374151;
+}
+
+.ant-input, .ant-input-password {
+  border-radius: 12px;
+  border-color: #d1d5db;
+  padding: 12px 16px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.ant-input:hover, .ant-input-password:hover {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.1);
+}
+
+.ant-input:focus, .ant-input-password:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* 🎨 Button improvements */
+.ant-btn-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 8px 24px;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.ant-btn-primary:hover {
+  background: linear-gradient(135deg, #5b57f0 0%, #7c3aed 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+}
+
+/* 🎨 Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5b57f0 0%, #7c3aed 100%);
+}
+
+/* 🎨 Estilos para el menú del header */
+.ant-menu-dark .ant-menu-item,
+.ant-menu-dark .ant-menu-submenu-title {
+  color: white !important;
+}
+
+.ant-menu-dark .ant-menu-item:hover,
+.ant-menu-dark .ant-menu-submenu-title:hover {
+  color: #f0f0f0 !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.ant-menu-dark .ant-menu-item-selected {
+  color: white !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Radio button personalizado */
+.ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
+  border-color: #8b5cf6 !important;
+  background-color: #8b5cf6 !important;
+}
+
+.ant-radio-wrapper .ant-radio-checked::after {
+  border: 1px solid #8b5cf6 !important;
+}
+
+/* 🎨 Botón de logout mejorado */
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
 }
